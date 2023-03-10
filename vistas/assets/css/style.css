@@ -1,0 +1,814 @@
+:root {
+    --primary-color: #ed4c67;
+    --grey-color: #b3b3b3;
+    --light-color: #eaeaea;
+    --white-color: #ffffff;
+    --dark-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+ ::before,
+ ::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 500;
+    line-height: normal;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+.container {
+    max-width: 1280px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+
+/*==================
+  HEADER 
+==================*/
+
+.header-top,
+.header-main nav>ul {
+    display: none;
+}
+
+
+/*------TOP------*/
+
+header :where(.wrap, .socials ul, .options, li a) {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.header-main :where(.menu-trigger, .icons a) {
+    font-size: 20px;
+}
+
+header li a {
+    transition: color .3s;
+}
+
+header li a:hover {
+    color: var(--grey-color);
+}
+
+.header-top :where(.socials li:last-child, .options > div:last-child) {
+    margin-left: 15px;
+}
+
+
+/*------MAIN------*/
+
+.header-main :where(nav, .icons) {
+    flex: 1 1 0;
+}
+
+.header-main .icons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-main :where(nav, .icons)>ul {
+    display: flex;
+    gap: 24px;
+}
+
+.header-main .menu-trigger {
+    display: block;
+}
+
+.header-main :where(nav > ul > li > a, .logo) {
+    line-height: 90px;
+}
+
+.header-main .logo {
+    font-size: 28px;
+}
+
+.header-main :where(nav li > a span, .logo) {
+    font-weight: 700;
+}
+
+.header-main .icons li a {
+    position: relative;
+    gap: 0;
+    justify-content: center;
+}
+
+.header-main .icons li .qty {
+    position: absolute;
+    top: -6px;
+    left: -8px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 10px;
+    width: 17px;
+    height: 17px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+
+/*-----PRODUCTO------*/
+
+.product {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.product .list {
+    margin-bottom: 30px;
+}
+
+.product-thumb {
+    position: relative;
+    height: 300px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.object-cover img {
+    object-fit: cover;
+    height: 100%;
+    position: absolute;
+    transition: all .75s cubic-bezier(0, 0, .2, 1);
+}
+
+.product-thumb:hover .hover-image {
+    opacity: 1;
+    transform: scale(1.1, 1.1, 1.1)translateZ(0);
+}
+
+.product :where(.label, .icons-act) {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.product .label {
+    z-index: 2;
+    font-size: 12px;
+    font-weight: 700;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 2px 5px;
+    border-radius: 5px;
+    line-height: 20px;
+}
+
+.product .icons-act {
+    right: 15px;
+    left: auto;
+    transform: translateX(70px);
+    transition: all 0.3s cubic-bezier(0, 0, .2, 1);
+}
+
+.product-thumb:hover .icons-act {
+    transform: translateX(0);
+}
+
+.hover-image {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .8s ease, tranform 1.1s cubic-bezier(.15, .75, .5, 1) 0s;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.product .icons-act li a {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: var(--white-color);
+    border-radius: 50%;
+    margin-bottom: 8px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.product .icons-act li a:hover {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.product-info h2 {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product .price .before {
+    color: var(--grey-color);
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+
+
+/*------MOBILE MENU------*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0 0 0 / 50%);
+    pointer-events: none;
+    z-index: 15px;
+    transition: .5s ease;
+    opacity: 0;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+nav.mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 350px;
+    height: 100%;
+    max-width: calc(100vw -60px);
+    padding: 30px;
+    background-color: var(--white-color);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    left: -100%;
+    visibility: hidden;
+    transition: .5s ease;
+}
+
+nav.mobile.active {
+    left: 0;
+    visibility: visible;
+}
+
+nav.mobile>ul>li {
+    position: relative;
+}
+
+nav.mobile>ul>li>a {
+    display: block;
+    position: relative;
+    padding: 13px 0;
+}
+
+nav.mobile .enter {
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+nav.mobile .enter div {
+    max-width: 170px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 12px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+nav.mobile .enter div::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    height: 1px;
+    width: 100%;
+    background-color: var(--light-color);
+}
+
+nav.mobile .enter div span {
+    position: relative;
+    padding: 5px 20px;
+    color: var(--grey-color);
+    background-color: var(--white-color);
+}
+
+.btn-primary,
+.btn-light {
+    display: inline-flex;
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 60px;
+    padding: 0 32px;
+    line-height: 42px;
+    transition: background-color .3s, color .3s;
+}
+
+.btn-primary {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    border: 1px solid transparent;
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--dark-color);
+    border: 1px var(--dark-color);
+}
+
+.btn-light {
+    background-color: var(--white-color);
+}
+
+.btn-light:hover,
+.hero a:hover .btn-light {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+nav.mobile .enter a {
+    display: block;
+    text-align: center;
+}
+
+nav.mobile .btn-light {
+    border: 1px solid var(--dark-color);
+    margin-top: 8px;
+}
+
+.close-trigger {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    transition: color .3s;
+}
+
+.close-trigger:hover {
+    color: var(--primary-color);
+}
+
+nav.mobile .close-trigger {
+    position: absolute;
+    right: -40px;
+    top: 0;
+    color: var(--white-color);
+}
+
+nav.mobile>ul {
+    overflow-y: auto;
+    margin-bottom: 30px;
+}
+
+nav.mobile>ul>li>span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 55px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: color .3s;
+}
+
+nav.mobile>ul>li>span:hover {
+    color: var(--grey-color);
+}
+
+nav.mobile .submenu {
+    height: 0;
+    overflow: hidden;
+}
+
+nav.mobile .submenu a {
+    color: #7f7f7f;
+    padding-left: 15px;
+    transition: color .3s;
+}
+
+nav.mobile .submenu a:hover {
+    color: var(--dark-color);
+}
+
+nav.mobile .submenu {
+    transform: translateY(15px);
+    transition: height .3s, transform .3s;
+}
+
+nav.mobile .expand~.submenu {
+    height: auto;
+    transform: translateY(0);
+}
+
+
+/*------SEARCH------*/
+
+.search-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 0;
+    background-color: var(--white-color);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.search-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.search-modal .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.search-modal .search-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+form.search {
+    position: relative;
+    height: 46px;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form.search input {
+    position: absolute;
+}
+
+form.search :where(input[type=search], input[type=text]) {
+    width: 100%;
+    height: 46px;
+    left: 0;
+    top: 0;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid var(--grey-color);
+    border-radius: 6px;
+}
+
+form.search input[type=submit] {
+    right: 0;
+    top: 0;
+    border: 0;
+    background-color: transparent;
+    color: transparent;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+form.search i {
+    position: relative;
+    z-index: 1;
+    padding: 0 15px;
+}
+
+.search-modal .search-footer {
+    margin-top: 8px;
+    color: var(--grey-color);
+}
+
+.search-modal .search-footer a {
+    margin-right: 8px;
+    color: var(--dark-color);
+    text-decoration: underline;
+    transition: color .3s;
+}
+
+.search-modal .search-footer a:hover {
+    color: var(--grey-color);
+}
+
+
+/*------HERO------*/
+
+.hero .wrap {
+    display: grid;
+}
+
+.hero .big {
+    height: 335px;
+}
+
+.hero .list:not(.big) {
+    height: 230px;
+}
+
+.hero .wrap .list {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero a:hover img {
+    transform: scale(1.1);
+}
+
+.hero .info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 10px 40px;
+    text-align: center;
+}
+
+
+/*==================
+    MAIN
+ ==================*/
+
+main>div {
+    margin-bottom: 90px;
+}
+
+
+/*------Tabbed------*/
+
+.tabbed nav {
+    margin: 0 0 50px;
+}
+
+.tabbed nav ul {
+    display: flex;
+    justify-content: space-between;
+    max-width: 460px;
+    width: auto;
+    padding-bottom: 10px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.tabbed nav ul li a {
+    font-size: clamp(20px, -0.875em + 9.333vw, 26px);
+    font-weight: 400;
+    transition: color .3s;
+}
+
+.tabbed nav ul li:not(.active) a {
+    color: var(--grey-color);
+}
+
+.tabbed nav ul li a:hover {
+    color: var(--dark-color);
+}
+
+.tabbed nav ul li.active a {
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.tabbed nav li {
+    width: fit-content!important;
+}
+
+.tabbed .button {
+    text-align: center;
+    margin: 30px 0 0;
+}
+
+
+/*------BANNER------*/
+
+.banner .bg-image img {
+    position: relative;
+}
+
+
+/*------FOOTER------*/
+
+.inner-footer {
+    font-size: 14px;
+    padding: 0 0 60px;
+    color: #7f7f7f;
+}
+
+.inner-footer .wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+}
+
+.inner-footer.wrap h3 {
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 15px;
+}
+
+.inner-footer .wrap>div:not(.subscribe) h3 {
+    font-size: 18px;
+}
+
+.inner-footer .socials ul {
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    color: var(--dark-color);
+}
+
+footer a {
+    transition: color .3s;
+}
+
+footer a:hover {
+    color: var(--dark-color);
+}
+
+footer .socials a:hover {
+    color: var(--grey-color);
+}
+
+.copyright {
+    text-align: center;
+}
+
+
+/*------RESPONSIVE------*/
+
+@media only screen and (max-width: 320px) {
+    .header-main .logo {
+        font-size: 18px;
+        margin-right: 15px;
+    }
+}
+
+@media only screen and (max-width:576) {
+    .hero .wrap {
+        gap: 15px;
+    }
+}
+
+@media(min-width:576px) and (max-width:767px) {
+    .hero .wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero .big {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+@media (min-width:768px) {
+    .hero .wrap {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+    .hero .big {
+        grid-row-start: 1;
+        grid-row-end: 3;
+        height: 640px;
+    }
+    .hero .list:not(.big) {
+        height: 320px;
+    }
+}
+
+@media only screen and (min-width:992px) {
+    .header-main .menu-trigger {
+        display: none;
+    }
+    .header-main nav>ul {
+        display: flex;
+    }
+    .header-top {
+        display: block;
+    }
+    /*------SUBMENU------*/
+    .header-main nav .submenu,
+    .megamenu {
+        position: absolute;
+        top: auto;
+        left: auto;
+        padding: 15px 20px;
+        margin-left: -20px;
+        line-height: 40px;
+        min-width: 150px;
+        z-index: 999;
+        opacity: 0;
+        visibility: visible;
+        transform: translateY(20px);
+        transition: transform .3s;
+    }
+    .header-main nav :where(.submenu, .megamenu) {
+        background-color: var(--white-color);
+        box-shadow: 0 20px 30px rgb(0 0 0 /13%);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        transition: transform .3s;
+    }
+    .header-main nav li:hover :where(.submenu, .megamenu) {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    /*------MEGA MENU------*/
+    .megamenu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: 30px 0;
+    }
+    .megamenu .wrap {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        align-items: flex-start;
+        gap: 40px;
+    }
+    .megamenu .menus {
+        display: flex;
+        justify-content: space-between;
+    }
+    .megamenu .links h3 {
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    .megamenu .links a {
+        color: #7f7f7f;
+        transition: color 0.3s;
+    }
+    .megamenu .links a:hover {
+        color: var(--dark-color);
+    }
+    .megamenu .featured h3 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .megamenu .product {
+        grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+    }
+}
