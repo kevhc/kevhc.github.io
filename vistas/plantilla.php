@@ -1,8 +1,4 @@
-<?php
 
-$path = ControladorPlantilla::path();
-
-?>
 
 <html lang="en">
 
@@ -28,7 +24,7 @@ $path = ControladorPlantilla::path();
     <!--SWIPER PLUGINS -->
 
     <!--plugins css personalizado-->
-    <link rel="stylesheet" href="<?php echo $path ?>vistas/assets/css/style.css">
+    <link rel="stylesheet" href="vistas/assets/css/style.css">
 
     <!--plugins javascript 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -99,11 +95,11 @@ $path = ControladorPlantilla::path();
                                                                     <a href="#">
                                                                         <div class="image">
                                                                             <img
-                                                                                src="<?php echo $path ?>vistas/assets/img/producto01.jpg">
+                                                                                src="vistas/assets/img/producto01.jpg">
                                                                         </div>
                                                                         <div class="image hover-image">
                                                                             <img
-                                                                                src="<?php echo $path ?>vistas/assets/img/producto01b.jpg">
+                                                                                src="vistas/assets/img/producto01b.jpg">
                                                                         </div>
                                                                     </a>
                                                                 </div>
